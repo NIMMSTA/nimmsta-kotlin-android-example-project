@@ -1,0 +1,23 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://maven.goma-cms.org/repository/nimmsta-core-release/'
+            credentials {
+                username = "yourusername"
+                password = "yourpassword"
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+            metadataSources {
+                mavenPom()
+                artifact()
+            }
+        }
+    }
+}
+rootProject.name = "nimmsta-kotlin-android-example-project"
+include ':app'
