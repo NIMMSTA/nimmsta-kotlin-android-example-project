@@ -48,8 +48,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    api("com.nimmsta.core:shared-android:5.0.3814@aar")
-    api("com.nimmsta.core:android:5.0.2537@aar") {
+    api("com.nimmsta.core:shared-android:6.0.+@aar")
+    api("com.nimmsta.core:android:6.0.+@aar") {
         transitive = true
         changing = true
     }

@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), NIMMSTAEventHandler {
                 it.result.enableBackgroundAndNotifications()
 
                 // Check if connected, if not show connection Activity
-                if (!serviceConnection.isConnected) {
+                if (!serviceConnection.hasActiveConnections) {
                     serviceConnection.displayConnectionActivity()
                 }
             } catch (throwable: Throwable) {
