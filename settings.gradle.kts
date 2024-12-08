@@ -1,5 +1,10 @@
-import java.io.FileInputStream
 import java.util.Properties
+
+val localProperties = Properties()
+val localPropertiesFile = file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(localPropertiesFile.inputStream())
+}
 
 pluginManagement {
     repositories {
@@ -24,12 +29,9 @@ dependencyResolutionManagement {
 
             url = uri("https://maven.goma-cms.org/repository/nimmsta-core-release/")
             credentials {
-                val p = Properties()
-                p.load(FileInputStream("local.properties"))
-
                 //Use your NIMMSTA access credentials. In this case set them in the local.properties file.
-                username = p["nimmsta.username"].toString()
-                password = p["nimmsta.password"].toString()
+                username = localProperties.getProperty("nimmsta.username")
+                password = localProperties.getProperty("nimmsta.password")
             }
             metadataSources {
                 mavenPom()
