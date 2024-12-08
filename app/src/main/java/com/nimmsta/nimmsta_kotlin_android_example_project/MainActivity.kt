@@ -3,9 +3,12 @@ package com.nimmsta.nimmsta_kotlin_android_example_project
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.nimmsta.barcode.Barcode
 import com.nimmsta.core.android.framework.NIMMSTAServiceConnection
 import com.nimmsta.core.shared.device.NIMMSTADevice
 import com.nimmsta.core.shared.device.NIMMSTAEventHandler
+import com.nimmsta.core.shared.textprotocol.event.ScanEvent
+import com.nimmsta.core.shared.textprotocol.event.TouchEvent
 
 class MainActivity : AppCompatActivity(), NIMMSTAEventHandler {
 
@@ -42,6 +45,24 @@ class MainActivity : AppCompatActivity(), NIMMSTAEventHandler {
 
     override fun didConnectAndInit(device: NIMMSTADevice) {
         // this is the point in time when you can start interacting with your device.
+    }
+
+    override fun didScanBarcode(device: NIMMSTADevice, barcode: Barcode, event: ScanEvent) {
+        super.didScanBarcode(device, barcode, event)
+    }
+
+    override fun didTouch(
+        device: NIMMSTADevice,
+        x: Double,
+        y: Double,
+        screen: Int,
+        event: TouchEvent
+    ) {
+        super.didTouch(device, x, y, screen, event)
+    }
+
+    override fun batteryLevelChanged(device: NIMMSTADevice, newBatteryLevel: Int) {
+        super.batteryLevelChanged(device, newBatteryLevel)
     }
 
     override fun onDestroy() {
