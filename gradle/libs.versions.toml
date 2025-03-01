@@ -1,0 +1,27 @@
+[versions]
+appcompat = "1.7.0"
+constraintlayout = "2.2.0"
+kotlin = "2.0.20"
+agp = "8.7.2"
+ktx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+material = "1.12.0"
+nimmsta = "7.0.7654"
+
+[libraries]
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+nimmsta = { module = "com.nimmsta.core:shared-android", version.ref = "nimmsta" }
+
+[bundles]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
