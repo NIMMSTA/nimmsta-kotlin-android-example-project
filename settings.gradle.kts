@@ -27,7 +27,7 @@ dependencyResolutionManagement {
         mavenCentral()
         maven {
 
-            url = uri("https://maven.goma-cms.org/repository/nimmsta-core-release/")
+            url = uri("https://maven.nimmsta.com/repository/nimmsta-core-release/")
             credentials {
                 //Use your NIMMSTA access credentials. In this case set them in the local.properties file.
                 username = localProperties.getProperty("nimmsta.username")
